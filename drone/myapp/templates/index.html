@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Offline Drone Planner</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      #map {
+        height: 90vh;
+      }
+      body {
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/"><button>Home</button></a>
+    <h2>Drone Waypoint Planner</h2>
+    <div id="map"></div>
+    <button onclick="submitWaypoints()">Submit Waypoints</button>
+    <button onclick="deleteWaypoints()">Clear Waypoints</button>
+
+    <script>
+      var map = L.map("map").setView([37.7749, -122.4194], 13); // Default location
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "Map data © OpenStreetMap contributors",
+      }).addTo(map);
+
+      let waypoints = [];
+
+      map.on("click", function (e) {
+        const lat = e.latlng.lat;
+        const lng = e.latlng.lng;
+        L.marker([lat, lng])
+          .addTo(map)
+          .bindPopup(`Lat: ${lat.toFixed(5)}<br>Lng: ${lng.toFixed(5)}`)
+          .openPopup();
+        waypoints.push({ lat: lat, lng: lng, alt: 10 }); // Altitude is hardcoded for now
+      });
+
+      function deleteWaypoints() {
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "Map data © OpenStreetMap contributors",
+        }).addTo(map);
+        location.reload();
+        //alert("map cleared");
+      }
+
+      function submitWaypoints() {
+        fetch("/waypoints", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(waypoints),
+        })
+          .then((res) => res.json())
+          .then((data) => alert(`Sent ${data.received} waypoints!`));
+      }
+    </script>
+  </body>
+</html>
