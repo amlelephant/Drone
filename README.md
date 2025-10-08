@@ -1,4 +1,27 @@
+# Modular Drone Project
 
-# Custom Drone
+This project has been in development for quite some time and is still a work in progress. Since most of the software tuning is handled through **Mission Planner**, this repository focuses primarily on the **hardware and physical design** aspects of the build.
 
-This project took quite a long time and is currently still in the making. Since most of the software side is all parameters on mission planner, this repo will be mostly to store the physical components. Since this is also being created after the fact (I forgot to upload this) the version system is a little off since I did not locally download each version of the body. The ones with the highest version are the correct ones though. The biggest problem with creating custom drones is by far the paramaters. I won't put my parameter file on here because it is simply useless for someone trying to recreate my project. The parameters depending on what you build it out of and how weight is distributed would be completely different than mine. My build consisted of a raspberry pi zero, speedy bee f405 v4, and some basic amazon motors. The other components can be found on the hand drawn schematics. The drone folder contains a little tester code for possible usages I have been working on. (STEP files are downloaded and used for demension checking and building on onshape)
+> ⚙️ *Note:* This repo was created after much of the project was already complete, so the version history isn’t perfectly linear. The files with the **highest version numbers** represent the most up-to-date designs.
+
+## Overview
+
+The biggest challenge in creating a custom drone lies in **parameter tuning**. Because each build varies in frame size, weight distribution, and components, parameter files are **not portable** between systems. For that reason, I haven’t included my personal parameter file here—it wouldn’t be useful for anyone replicating this project.
+
+My current build consists of:
+- **Flight Controller:** SpeedyBee F405 V4  
+- **Companion Computer:** Raspberry Pi Zero  
+- **Motors:** Generic Amazon brushless motors  
+- **Additional Components:** Detailed in the included hand-drawn schematics  
+
+STEP files are provided for **dimension checking and CAD modeling** in Onshape.
+
+## Contents
+
+- `/Drone` – contains test code for potential applications  
+- `/Schematics` – hand-drawn diagrams of circuit connections and layout  
+- `/CAD` – STEP files and mechanical designs for 3D visualization  
+
+---
+
+This project represents my ongoing effort to design a modular drone platform—built from scratch, parameter-tuned by hand, and continually improved through iteration and testing.
