@@ -2,7 +2,7 @@
 
 This project has been in development for quite some time and is still a work in progress. Since most of the software tuning is handled through **Mission Planner**, this repository focuses primarily on the **hardware and physical design** aspects of the build.
 
-> ⚙️ *Note:* This repo was created after much of the project was already complete, so the version history isn’t perfectly linear. The files with the **highest version numbers** represent the most up-to-date designs.
+> *Note:* This repo was created after much of the project was already complete, so the version history isn’t perfectly linear. The files with the **highest version numbers** represent the most up-to-date designs.
 
 ## Overview
 
