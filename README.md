@@ -20,7 +20,6 @@ STEP files are provided for **dimension checking and CAD modeling** in Onshape.
 
 - `/Drone` – contains test code for potential applications  
 - `/Schematics` – hand-drawn diagrams of circuit connections and layout  
-- `/CAD` – STEP files and mechanical designs for 3D visualization  
 
 ---
 
