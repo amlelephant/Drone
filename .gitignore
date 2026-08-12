@@ -1,0 +1,14 @@
+# Third-party installers and build output — link to the vendor instead
+*.exe
+*.msi
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Flight logs / large captures
+*.bin
+*.BIN
+*.log
